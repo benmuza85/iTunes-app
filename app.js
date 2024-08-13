@@ -19,16 +19,14 @@ app.use(json());
 // Use the API router for handling requests to /api
 app.use('/api', apiRouter);
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname,'client', 'build')))
-    app.get('*', (req, res)=>{
-        res.sendFile(path.join(__dirname,'client','build','index.html'), (err)=>{
-            if(err){
-                res.status(500).send(err)
-            }
-        })
+app.use(express.static(path.join(__dirname,'client', 'build')))
+app.get('/*', (req, res)=>{
+    res.sendFile(path.join(__dirname,'client','build','index.html'), (err)=>{
+        if(err){
+            res.status(500).send(err)
+        }
     })
-}
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
