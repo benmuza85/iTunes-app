@@ -1,0 +1,36 @@
+/* Styles for the item card */
+.item-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 90%;
+  max-width: 200px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.item-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.item-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.item-action-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.item-action-button:hover {
+  background-color: #218838;
+}
